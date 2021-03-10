@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Administrativo - Homepage</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <main>
+    <aside>
+        <h3>Painel Administrativo</h3>
+        <ul>
+          <li><a href="home.html">Homepage</a></li>
+          <li><a href="postagens.html">Postagens</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="configuracoes.html">Configurações</a></li>
+          <li><a href="index.html">Sair</a></li>
+        </ul>
+    </aside>
+    <section>
+      <h1>Homepage</h1>
+      <form action="">
+        <label for="name">Nome</label>
+        <br>
+        <input type="text" name="name" id="name" value="John Doe">
+        <br>
+        <label for="photo">Foto</label>
+        <br>
+        <input type="file" name="photo" id="photo">
+        <br>
+        <label for="description">Descricao</label>
+        <br>
+        <textarea name="description" id="description" cols="50" rows="5">Developer | Gamer | Writter</textarea>
+        <br>
+        <label for="background">Imagem de fundo</label>
+        <br>
+        <input type="file" name="background" id="background">
+        <br>
+        <br>
+        <table border="1">
+          <legend>Links</legend>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Nome</th>
+              <th>Url</th>
+              <th>Image</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <button>Editar</button>
+              </td>
+              <td>Linkedin</td>
+              <td>http://linkedin.com/john_doe</td>
+              <td>...</td>
+              <td>
+                 <button>Remover</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button>Editar</button>
+              </td>
+              <td>Twitter</td>
+              <td>http://twitter.com/john_doe</td>
+              <td>...</td>
+              <td>
+                 <button>Remover</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button>Editar</button>
+              </td>
+              <td>Github</td>
+              <td>http://github.com/john_doe</td>
+              <td>...</td>
+              <td>
+                 <button>Remover</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
