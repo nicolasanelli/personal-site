@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo&family=Lora&display=swap');
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: 'heebo', 'sans-serif';
+  margin: 0;
+  padding: 0;
+}
+
+ul, li, a {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  color: inherit;
+  font-weight: inherit;
+}
+
+nav {
+  border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1152px;
+  margin: auto;
+  padding: 2em;
+}
+
+@media only screen and (max-width:576px) {
+  .nav {
+    flex-direction: column;
+    row-gap: 3em;
+  }
+}
+
+header.blog-title {
+  font-size: 27px;
+  font-weight: 700;
+  color: black;
+}
+
+ul.nav-links {
+  list-style: none;;
+}
+
+ul.nav-links li {
+  display: inline;
+  padding: 1em;
+}
+
+ul.nav-links li a {
+  color: rgb(117, 117, 117);
+}
+ul.nav-links li a:hover {
+  color: rgba(41, 41, 41, 1);
+}
+
+.content-container {
+  display: flex;
+  gap: 2em;
+  max-width: 1152px;
+  margin: auto;
+  padding: 2em;
+}
+
+@media only screen and (max-width:885px) {
+  .content-container {
+    flex-direction: column;
+  }
+}
+
+.content-container aside {
+  flex: 2;
+}
+
+.content-container section {
+  flex: 6;
+}
+
+aside h3 {
+  font-weight: 700;
+  font-size: 21px;
+  /* margin-top: 2em; */
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+aside li {
+  margin-top: 1em;
+  font-size: 18px;
+}
+
+aside a {
+  color: rgb(117, 117, 117);
+}
+aside a:hover {
+  color: rgba(41, 41, 41, 1);
+}
+
+.post {
+  font-size: 21px;
+  border-bottom: 1px solid rgb(230, 230, 230);
+  padding-bottom: 50px;
+}
+.post:last-of-type {
+  border-color: transparent;
+}
+
+.post small.publish-info {
+  font-size: 14px;
+  color: rgb(117, 117, 117);
+}
+.post small.publish-info strong{
+  color: rgba(41, 41, 41, 1);
+  font-weight: 700;
+}
+
+.post h2 {
+  margin-top: 12px;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.post .post-link {
+  font-size: 24px;
+  margin-left: 0.5em;
+  text-decoration: none;
+  color: rgb(117, 117, 117);
+}
+.post .post-link:hover {
+  color: rgba(41, 41, 41, 1);
+}
+
+.post .post-content {
+  color: rgba(41, 41, 41, 1);
+  letter-spacing: 1px;
+  font-family: 'lora', 'sans-serif';
+}
+
+.post .post-actions {
+  text-align: right;
+}
+
+.post .post-actions button {
+  border-radius: 1em;
+  padding: 10px 25px 10px 25px;
+  color: rgba(41, 41, 41, 1);
+  background-color: rgb(230, 230, 230);
+  border: 1px solid transparent;
+  -webkit-transition: all .3s ease-out 0s;
+  -moz-transition: all .3s ease-out 0s;
+  -ms-transition: all .3s ease-out 0s;
+  -o-transition: all .3s ease-out 0s;
+  transition: all .3s ease-out 0s;
+}
+.post .post-actions button:hover {
+  cursor: pointer;
+  background-color: rgba(41, 41, 41, 1);
+  color: rgb(230, 230, 230);
+}
+
