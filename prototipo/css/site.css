@@ -1,31 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Heebo&family=Lora&display=swap');
 
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  font-weight: 400;
-  font-style: normal;
+:root {
+  --assent-text: black;
+  --background-color: white;
+  --primary-text: rgba(41, 41, 41, 1);
+  --secondary-text: rgba(117, 117, 117, 1);
+  --secondary-color: rgba(230, 230, 230, 1);
+  --body-font-family: 'Heebo';
+  --post-font-family: 'Lora';
+  --portfolio-font-family: 'Roboto';
 }
 
 body {
-  font-family: 'heebo', 'sans-serif';
   margin: 0;
   padding: 0;
-  color: rgba(41, 41, 41, 1);
+  font-family: var(--body-font-family);
+  color: var(--primary-text);
+  background-color: var(--background-color);
 }
 
-ul, li, a {
+ul, li {
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+a, button {
+  color: currentColor;
   text-decoration: none;
-  color: inherit;
-  font-weight: inherit;
 }
 
 nav {
-  border-bottom: 1px solid rgb(230, 230, 230);
+  border-bottom: 1px solid var(--secondary-color);
 }
 
 .nav {
@@ -54,7 +60,7 @@ header.blog-title {
 }
 
 .nav-links .active {
-  color: rgba(41, 41, 41, 1);
+  color: var(--primary-text);
   font-weight: 700;
 }
 
@@ -64,10 +70,10 @@ header.blog-title {
 }
 
 .nav-links li a {
-  color: rgb(117, 117, 117);
+  color: var(--secondary-text);
 }
 .nav-links li a:hover {
-  color: rgba(41, 41, 41, 1);
+  color: var(--primary-text);
   font-weight: 700;
 }
 
@@ -96,7 +102,6 @@ header.blog-title {
 aside h3 {
   font-weight: 700;
   font-size: 21px;
-  /* margin-top: 2em; */
   margin-top: 0;
   margin-bottom: 1em;
 }
@@ -107,15 +112,15 @@ aside li {
 }
 
 aside a {
-  color: rgb(117, 117, 117);
+  color: var(--secondary-text);
 }
 aside a:hover {
-  color: rgba(41, 41, 41, 1);
+  color: var(--primary-text);
 }
 
 .post {
   font-size: 21px;
-  border-bottom: 1px solid rgb(230, 230, 230);
+  border-bottom: 1px solid var(--secondary-color);
   padding-bottom: 50px;
 }
 .post:last-of-type {
@@ -124,7 +129,7 @@ aside a:hover {
 
 .post small.publish-info {
   font-size: 14px;
-  color: rgb(117, 117, 117);
+  color: var(--secondary-text);
 }
 .post small.publish-info strong{
   font-weight: 700;
@@ -133,7 +138,7 @@ aside a:hover {
 .post h2 {
   margin-top: 12px;
   font-size: 36px;
-  color: #000;
+  color: var(--assent-text);
   font-weight: 700;
 }
 
@@ -141,15 +146,15 @@ aside a:hover {
   font-size: 24px;
   margin-left: 0.5em;
   text-decoration: none;
-  color: rgb(117, 117, 117);
+  color: var(--secondary-text);
 }
 .post .post-link:hover {
-  color: rgba(41, 41, 41, 1);
+  color: var(--primary-text);
 }
 
 .post .post-content {
   letter-spacing: 1px;
-  font-family: 'lora', 'sans-serif';
+  font-family: var(--post-font-family);
 }
 
 .post .post-actions {
@@ -159,7 +164,8 @@ aside a:hover {
 .post .post-actions button {
   border-radius: 1em;
   padding: 10px 25px 10px 25px;
-  background-color: rgb(230, 230, 230);
+  background-color: var(--secondary-color);
+  color: var(--secondary-text);
   border: 1px solid transparent;
   -webkit-transition: all .3s ease-out 0s;
   -moz-transition: all .3s ease-out 0s;
@@ -169,23 +175,24 @@ aside a:hover {
 }
 .post .post-actions button:hover {
   cursor: pointer;
-  background-color: rgba(41, 41, 41, 1);
-  color: rgb(230, 230, 230);
+  background-color: var(--secondary-text);
+  color: var(--secondary-color);
 }
 
 .portfolio {
   flex-direction: column;
+  font-family: var(--portfolio-font-family);
 }
 
 .project {
-  border: 1px solid rgb(230, 230, 230);
+  border: 1px solid var(--secondary-color);
   border-radius: 10px;
-  box-shadow: rgb(230, 230, 230) 0px 0px 10px 1px;
+  box-shadow: var(--secondary-color) 0px 0px 10px 1px;
 }
 
 .project .project-content {
   display: flex;
-  border-bottom: 1px solid rgb(230, 230, 230);
+  border-bottom: 1px solid var(--secondary-color);
 }
 
 @media only screen and (max-width:991px) {
@@ -194,6 +201,7 @@ aside a:hover {
   }
   .project .project-content img {
     border-radius: 0 !important;
+    margin: 1em;
   }
 }
 
@@ -204,11 +212,10 @@ aside a:hover {
 
 .project .project-content .project-description h2 {
   font-size: 36px;
-  color: #000;
+  color: var(--assent-text);
 }
 .project .project-content .project-description div {
   letter-spacing: 1px;
-  font-family: 'Roboto', 'sans-serif';
 }
 
 .project .project-content img {
@@ -237,7 +244,6 @@ aside a:hover {
   }
 }
 
-
 .project .project-footer ul li {
   display: inline-flex;
 }
@@ -245,7 +251,8 @@ aside a:hover {
 .project .project-footer button {
   border-radius: 1em;
   padding: 5px 25px 5px 25px;
-  background-color: rgb(230, 230, 230);
+  background-color: var(--secondary-color);
+  color: var(--secondary-text);
   border: 1px solid transparent;
   -webkit-transition: all .3s ease-out 0s;
   -moz-transition: all .3s ease-out 0s;
@@ -255,6 +262,24 @@ aside a:hover {
 }
 .project .project-footer button:hover {
   cursor: pointer;
-  background-color: rgba(41, 41, 41, 1);
-  color: rgb(230, 230, 230);
+  background-color: var(--secondary-text);
+  color: var(--secondary-color);
+}
+
+.matrix-theme {
+  --assent-text: rgb(0, 255, 13);
+  --background-color: black;
+  --primary-text: rgba(0, 255, 21, 0.596);
+  --secondary-text: rgb(255, 255, 255);
+  --secondary-color: rgba(0, 255, 21, 0.596);
+}
+.floating-button {
+  position: fixed;
+  bottom: 2em;
+  left: 1em;
+  background-color: blue;
+  color: white;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  border: none;
 }
