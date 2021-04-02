@@ -10,9 +10,13 @@
 
 body {
   font-family: 'rubik', 'sans-serif';
-  /* font-family: 'lato', 'sans-serif'; */
   margin: 0;
   padding: 0;
+  -webkit-transition: all .3s ease-out 0s;
+  -moz-transition: all .3s ease-out 0s;
+  -ms-transition: all .3s ease-out 0s;
+  -o-transition: all .3s ease-out 0s;
+  transition: all .3s ease-out 0s;
 }
 
 ul, li, a {
@@ -147,11 +151,6 @@ main::before {
   background: linear-gradient(to top right,rgba(159, 9, 170, 0.7) 0%,rgba(25,4,229,0.7) 100%); */
   min-width: 125px;
   border: 1px solid white;
-  -webkit-transition: all .3s ease-out 0s;
-  -moz-transition: all .3s ease-out 0s;
-  -ms-transition: all .3s ease-out 0s;
-  -o-transition: all .3s ease-out 0s;
-  transition: all .3s ease-out 0s;
 }
 .card-content-links a:hover {
   cursor: pointer;
