@@ -4,48 +4,97 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>John Doe - Projects</title>
-  <link rel="stylesheet" href="./css/style.css">
+  <title>John Doe - Portfolio</title>
+  <link rel="stylesheet" href="./css/site.css">
+  <script src="https://kit.fontawesome.com/51a374e229.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <nav>
-    <a href="./index.html">Home</a>
-    <a href="./blog.html">Blog</a>
+    <div class="nav">
+      <header class="blog-title" >
+        <a href="./projects.html">John Doe's Portfolio</a>
+      </header>
+      <ul class="nav-links">
+        <li><a href="./index.html">About me</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a class="active" href="./projects.html">Portfolio</a></li>
+      </ul>
+    </div>
   </nav>
-  <main>
-    <article>
-      <h2>Chess Game</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis pharetra leo, et tempus metus. Ut id augue id leo dignissim porttitor sed non massa. Nulla bibendum suscipit neque lacinia fringilla. Sed et sapien hendrerit, aliquam erat nec, pulvinar orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-      <img src="./images/chessgame.png" width="150px" height="150px" alt="">
-      <hr>
-      <p>C++, Lua, Python</p>
-      <ul>
-        <li><a href="">Github</a></li>
-        <li><a href="">Demo</a></li>
-      </ul>
+  <main class="content-container portfolio">
+    <article class="project">
+      <div class="project-content">
+        <div class="project-description">
+          <h2>Chess Game</h2>
+          <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis pharetra leo, et tempus metus. Ut id augue id leo dignissim porttitor sed non massa. Nulla bibendum suscipit neque lacinia fringilla. Sed et sapien hendrerit, aliquam erat nec, pulvinar orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
+        </div>
+        <img src="./images/chessgame.png" alt="">
+      </div>
+      <div class="project-footer">
+        <div>C++, Lua, Python</div>
+        <ul>
+          <li>
+            <button>
+              Github
+              <i class="fab fa-github"></i>
+            </button>
+          </li>
+          <li>
+            <button>
+              Demo
+              <i class="fas fa-external-link-alt"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
     </article>
 
-    <article>
-      <h2>Loja Virtual</h2>
-      <p>Mauris dictum fermentum dolor, sit amet aliquet turpis eleifend in. In rhoncus magna quis risus malesuada, id maximus odio iaculis. Pellentesque a magna malesuada, fermentum mi non, lobortis turpis. Curabitur ac tellus sed risus suscipit tempus. Morbi aliquet venenatis neque, at elementum diam.</p>
-      <img src="./images/loja-virtual.jpeg" width="150px" height="150px" alt="">
-      <hr>
-      <p>PHP, HTML, CSS, JQuery</p>
-      <ul>
-        <li><a href="">Acesse o projeto</a></li>
-      </ul>
+    <article class="project">
+      <div class="project-content">
+        <div class="project-description">
+          <h2>Loja Virtual</h2>
+          <div>Mauris dictum fermentum dolor, sit amet aliquet turpis eleifend in. In rhoncus magna quis risus malesuada, id maximus odio iaculis. Pellentesque a magna malesuada, fermentum mi non, lobortis turpis. Curabitur ac tellus sed risus suscipit tempus. Morbi aliquet venenatis neque, at elementum diam.</div>
+        </div>
+        <img src="./images/loja-virtual.jpeg" alt="">
+      </div>
+      <div class="project-footer">
+        <div>PHP, HTML, CSS, JQuery</div>
+        <ul>
+          <li>
+            <button>
+              Acesse o projeto
+              <i class="fas fa-desktop"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
     </article>
 
-    <article>
-      <h2>CMS</h2>
-      <p>Nullam nisl libero, dapibus sit amet sapien ac, sagittis convallis quam. Etiam ultricies erat velit, ut ultrices turpis mollis ac. Morbi congue sollicitudin leo, a feugiat nunc malesuada ut. Aliquam sed auctor enim, ac congue odio. Vivamus sit amet nibh sit amet lectus tincidunt aliquam.</p>
-      <img src="./images/cms.png" width="150px" height="150px" alt="">
-      <hr>
-      <p>Node, React.js</p>
-      <ul>
-        <li><a href="">Patreon</a></li>
-        <li><a href="">Acesse o projeto</a></li>
-      </ul>
+    <article class="project">
+      <div class="project-content">
+        <div class="project-description">
+          <h2>CMS</h2>
+          <div>Nullam nisl libero, dapibus sit amet sapien ac, sagittis convallis quam. Etiam ultricies erat velit, ut ultrices turpis mollis ac. Morbi congue sollicitudin leo, a feugiat nunc malesuada ut. Aliquam sed auctor enim, ac congue odio. Vivamus sit amet nibh sit amet lectus tincidunt aliquam.</div>
+        </div>
+        <img src="./images/cms.png" alt="">
+      </div>
+      <div class="project-footer">
+        <div>Node, React.js</div>
+        <ul>
+          <li>
+            <button>
+              Patreon
+              <i class="fab fa-patreon"></i>
+            </button>
+          </li>
+          <li>
+            <button>
+              Acesse o projeto
+              <i class="fas fa-desktop"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
     </article>
   </main>
 </body>

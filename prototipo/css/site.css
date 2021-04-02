@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Heebo&family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Heebo&family=Lora&display=swap');
 
 * {
   -webkit-box-sizing: border-box;
@@ -12,6 +12,7 @@ body {
   font-family: 'heebo', 'sans-serif';
   margin: 0;
   padding: 0;
+  color: rgba(41, 41, 41, 1);
 }
 
 ul, li, a {
@@ -46,23 +47,28 @@ nav {
 header.blog-title {
   font-size: 27px;
   font-weight: 700;
-  color: black;
 }
 
-ul.nav-links {
+.nav-links {
   list-style: none;;
 }
 
-ul.nav-links li {
+.nav-links .active {
+  color: rgba(41, 41, 41, 1);
+  font-weight: 700;
+}
+
+.nav-links li {
   display: inline;
   padding: 1em;
 }
 
-ul.nav-links li a {
+.nav-links li a {
   color: rgb(117, 117, 117);
 }
-ul.nav-links li a:hover {
+.nav-links li a:hover {
   color: rgba(41, 41, 41, 1);
+  font-weight: 700;
 }
 
 .content-container {
@@ -121,13 +127,13 @@ aside a:hover {
   color: rgb(117, 117, 117);
 }
 .post small.publish-info strong{
-  color: rgba(41, 41, 41, 1);
   font-weight: 700;
 }
 
 .post h2 {
   margin-top: 12px;
   font-size: 36px;
+  color: #000;
   font-weight: 700;
 }
 
@@ -142,7 +148,6 @@ aside a:hover {
 }
 
 .post .post-content {
-  color: rgba(41, 41, 41, 1);
   letter-spacing: 1px;
   font-family: 'lora', 'sans-serif';
 }
@@ -154,7 +159,6 @@ aside a:hover {
 .post .post-actions button {
   border-radius: 1em;
   padding: 10px 25px 10px 25px;
-  color: rgba(41, 41, 41, 1);
   background-color: rgb(230, 230, 230);
   border: 1px solid transparent;
   -webkit-transition: all .3s ease-out 0s;
@@ -169,3 +173,69 @@ aside a:hover {
   color: rgb(230, 230, 230);
 }
 
+.portfolio {
+  flex-direction: column;
+}
+
+.project {
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 10px;
+  box-shadow: rgb(230, 230, 230) 0px 0px 10px 1px;
+}
+
+.project .project-content {
+  display: flex;
+  border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.project .project-content .project-description {
+  flex: 4;
+  padding: 1em;
+}
+
+.project .project-content .project-description h2 {
+  font-size: 36px;
+  color: #000;
+}
+.project .project-content .project-description div {
+  letter-spacing: 1px;
+  font-family: 'Roboto', 'sans-serif';
+}
+
+.project .project-content img {
+  flex: 1;
+  height: 225px;
+  border-top-right-radius: 10px;
+}
+.project .project-content .project-description h2 {
+  margin: 0;
+}
+
+.project .project-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5em 1em;
+}
+
+.project .project-footer ul li {
+  display: inline-flex;
+}
+
+.project .project-footer button {
+  border-radius: 1em;
+  padding: 5px 25px 5px 25px;
+  background-color: rgb(230, 230, 230);
+  border: 1px solid transparent;
+  -webkit-transition: all .3s ease-out 0s;
+  -moz-transition: all .3s ease-out 0s;
+  -ms-transition: all .3s ease-out 0s;
+  -o-transition: all .3s ease-out 0s;
+  transition: all .3s ease-out 0s;
+}
+.project .project-footer button:hover {
+  cursor: pointer;
+  background-color: rgba(41, 41, 41, 1);
+  color: rgb(230, 230, 230);
+}
