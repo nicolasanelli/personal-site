@@ -9,6 +9,14 @@
   --body-font-family: 'Heebo';
   --post-font-family: 'Lora';
   --portfolio-font-family: 'Roboto';
+  --transition: all 0.5s;
+}
+.matrix-theme {
+  --assent-text: rgb(0, 255, 13);
+  --background-color: black;
+  --primary-text: rgba(0, 255, 21, 0.596);
+  --secondary-text: rgb(255, 255, 255);
+  --secondary-color: rgba(0, 255, 21, 0.596);
 }
 
 body {
@@ -17,6 +25,11 @@ body {
   font-family: var(--body-font-family);
   color: var(--primary-text);
   background-color: var(--background-color);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+  transition: var(--transition);
 }
 
 ul, li {
@@ -167,11 +180,6 @@ aside a:hover {
   background-color: var(--secondary-color);
   color: var(--secondary-text);
   border: 1px solid transparent;
-  -webkit-transition: all .3s ease-out 0s;
-  -moz-transition: all .3s ease-out 0s;
-  -ms-transition: all .3s ease-out 0s;
-  -o-transition: all .3s ease-out 0s;
-  transition: all .3s ease-out 0s;
 }
 .post .post-actions button:hover {
   cursor: pointer;
@@ -225,6 +233,8 @@ aside a:hover {
   width: 225px;
   max-width: 100%;
   align-self: center;
+  object-fit: cover;
+  object-position: 0 0;
 }
 .project .project-content .project-description h2 {
   margin: 0;
@@ -266,13 +276,6 @@ aside a:hover {
   color: var(--secondary-color);
 }
 
-.matrix-theme {
-  --assent-text: rgb(0, 255, 13);
-  --background-color: black;
-  --primary-text: rgba(0, 255, 21, 0.596);
-  --secondary-text: rgb(255, 255, 255);
-  --secondary-color: rgba(0, 255, 21, 0.596);
-}
 .floating-button {
   position: fixed;
   bottom: 2em;

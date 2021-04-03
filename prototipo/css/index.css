@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Rubik&display=swap');
 
+:root {
+  --assent: rgb(46, 84, 236);
+  --primary-text: rgb(0, 0, 0);
+  --secondary-text: rgb(230, 230, 230);
+  --background: rgb(255, 255, 255);
+  --secondary-background: rgba(41, 41, 41, 1);
+  --overlay-color-1: rgba(11, 161, 172, 0.7); /* rgba(159, 9, 170, 0.7) */
+  --overlay-color-2: rgba(25,4,229,0.7);
+  --body-font-family: 'rubik';
+  --transition: all 0.5s;
+}
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -9,20 +21,24 @@
 }
 
 body {
-  font-family: 'rubik', 'sans-serif';
   margin: 0;
   padding: 0;
-  -webkit-transition: all .3s ease-out 0s;
-  -moz-transition: all .3s ease-out 0s;
-  -ms-transition: all .3s ease-out 0s;
-  -o-transition: all .3s ease-out 0s;
-  transition: all .3s ease-out 0s;
+  font-family: var(--body-font-family);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+  transition: var(--transition);
 }
 
-ul, li, a {
+ul, li {
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+a, button {
+  color: currentColor;
   text-decoration: none;
 }
 
@@ -38,13 +54,10 @@ main::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgb(178,250,255);
-  background: -webkit-linear-gradient(left,rgba(11, 161, 172, 0.7) 0%,rgba(25,4,229,0.7) 100%);
-  background: -o-linear-gradient(left,rgba(11, 161, 172, 0.7) 0%,rgba(25,4,229,0.7) 100%);
-  background: linear-gradient(to right,rgba(11, 161, 172, 0.7) 0%,rgba(25,4,229,0.7) 100%);
-  /* background: -webkit-linear-gradient(left,rgba(159, 9, 170, 0.7) 0%,rgba(25,4,229,0.7) 100%);
-  background: -o-linear-gradient(left,rgba(159, 9, 170, 0.7) 0%,rgba(25,4,229,0.7) 100%);
-  background: linear-gradient(to top right,rgba(159, 9, 170, 0.7) 0%,rgba(25,4,229,0.7) 100%); */
+  background: var(--overlay-color-1);
+  background: -webkit-linear-gradient(left,var(--overlay-color-1) 0%,var(--overlay-color-2) 100%);
+  background: -o-linear-gradient(left,var(--overlay-color-1) 0%,var(--overlay-color-2) 100%);
+  background: linear-gradient(to right,var(--overlay-color-1) 0%,var(--overlay-color-2) 100%);
   z-index: 99;
 }
 .background {
@@ -54,7 +67,7 @@ main::before {
   top: 0;
   left: 0;
   z-index: 0;
-  /* background: url("./images/bg2.jpg"); */
+  /* background: url("./images/bg.jpg"); */
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-position: top !important;
@@ -64,16 +77,16 @@ main::before {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 100%;
+  z-index: 99;
+  background-color: var(--background);
+  text-align: center;
+  border-radius: 10px;
   -webkit-transform: translate(-50%,-50%);
   -moz-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   -o-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  width: 100%;
-  z-index: 99;
-  background-color: white;
-  text-align: center;
-  border-radius: 10px;
 }
 @media only screen and (min-width:768px) and (max-width:991px) {
   .card {
@@ -94,7 +107,8 @@ main::before {
 .card-header {
   height: 170px;
   width: 100%;
-  background-color: #2e54ec;
+  /* background: url("./images/cover.jpg"); */
+  background-color: var(--overlay-color-2);
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-position: top !important;
@@ -114,7 +128,8 @@ main::before {
   height: 170px;
   width: 170px;
   border-radius: 50%;
-  border: 5px solid white;
+  background-color: var(--background);
+  border: 5px solid var(--background);
 }
 @media(max-width:575px) {
   .card-profile {
@@ -142,20 +157,16 @@ main::before {
 .card-content-links a {
   border-radius: 1em;
   padding: 10px 25px 10px 25px;
-  color: rgb(230, 230, 230);
-  background: -webkit-linear-gradient(left,rgba(11, 161, 172, 0.7) 0%,rgba(25,4,229,0.7) 100%);
-  background: -o-linear-gradient(left,rgba(11, 161, 172, 0.7) 0%,rgba(25,4,229,0.7) 100%);
-  background: linear-gradient(to top right,rgba(11, 161, 172, 0.7) 0%,rgba(25,4,229,0.7) 100%);
-  /* background: -webkit-linear-gradient(left,rgba(159, 9, 170, 0.7) 0%,rgba(25,4,229,0.7) 100%);
-  background: -o-linear-gradient(left,rgba(159, 9, 170, 0.7) 0%,rgba(25,4,229,0.7) 100%);
-  background: linear-gradient(to top right,rgba(159, 9, 170, 0.7) 0%,rgba(25,4,229,0.7) 100%); */
+  color: var(--secondary-text);
+  background: -webkit-linear-gradient(left,var(--overlay-color-1) 0%,var(--overlay-color-2) 100%);
+  background: -o-linear-gradient(left,var(--overlay-color-1) 0%,var(--overlay-color-2) 100%);
+  background: linear-gradient(to top right,var(--overlay-color-1) 0%,var(--overlay-color-2) 100%);
   min-width: 125px;
-  border: 1px solid white;
+  border: 1px solid var(--background);
 }
 .card-content-links a:hover {
   cursor: pointer;
-  background-color: rgba(41, 41, 41, 1);
-  color: rgb(230, 230, 230);
+  background-color: var(--secondary-background);
 }
 
 .card-links {
@@ -172,17 +183,12 @@ main::before {
   width: 60px;
   height: 60px;
   border-radius: 38px;
-  border: 1px solid #000;
-  color: #000;
-  -webkit-transition: all .3s ease-out 0s;
-  -moz-transition: all .3s ease-out 0s;
-  -ms-transition: all .3s ease-out 0s;
-  -o-transition: all .3s ease-out 0s;
-  transition: all .3s ease-out 0s;
+  border: 1px solid var(--primary-text);
+  color: var(--primary-text);
 }
 .card-links ul li a:hover {
-  border-color: #2e54ec;
-  color: #2e54ec;
+  border-color: var(--assent);
+  color: var(--assent);
 }
 @media(max-width:575px) {
   .card-links ul li a {
