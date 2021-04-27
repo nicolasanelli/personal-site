@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>288</y>
+      <w>200</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>posts
+--
+- * id
+- * title: String(255)
+- * slug: Slug(255)
+- * publish_date: Date
+- * plain_text: Text(*)
+- * markdown_text: Text(*)
+- * show: Boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>296</x>
+      <y>80</y>
+      <w>200</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>homepage_links
+--
+- * id
+- * icon: String(255)
+- * url: String(255)
+- * alt: String(255)
+-  order: Number
+-  show: Boolean
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>80</y>
+      <w>200</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>homepage
+--
+- * id
+- * name: String(255)
+-   subtitle: String(255)
+-   summary: Text(2000)
+-   background_image: Image
+-   cover_image: Image
+-   profile_image: Image
+- * blog_button: Boolean
+- * portfolio_button: Boolean
+// - * main_theme: [Blue|Purple]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>496</y>
+      <w>200</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>projects
+--
+- * id
+- * name: String(255)
+- * description: Text(2000)
+- * image: Image
+-   tecnologies: String(255)
+- * show: Boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>384</x>
+      <y>496</y>
+      <w>200</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>project_links
+--
+- * id
+- * project_id
+- * name: String(255)
+- * icon: String(255)
+- * url: String(255)
+- * show: Boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>272</x>
+      <y>512</y>
+      <w>128</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-&lt;</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0;90.0;30.0;140.0;30.0</additional_attributes>
+  </element>
+</diagram>
