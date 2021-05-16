@@ -9,5 +9,8 @@ def index(request):
 def blog(request):
     return HttpResponse("Blog page!")
 
+def post(request, slug):
+    return HttpResponse(f"Post \"{slug}\" page!")
+
 def portfolio(request):
     return HttpResponse("Portfolio page!")
