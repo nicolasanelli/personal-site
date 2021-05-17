@@ -1,0 +1,31 @@
+{% load active_link_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}John Doe{% endblock %}</title>
+  <link rel="icon" type="image/png" href="{% static 'images/avatar.png' %}" />
+  <link rel="stylesheet" href="{% static 'css/site.css' %}">
+  <script src="{% static 'js/site.js' %}"></script>
+  <script src="https://kit.fontawesome.com/51a374e229.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- <button class="floating-button", onclick="alternateStyle()">Theme</button> -->
+  <nav>
+    <div class="nav">
+      <header class="blog-title" >
+        <a href="/blog">John Doe</a>
+      </header>
+      <ul class="nav-links">
+        <li><a href="/">About me</a></li>
+        <li><a class="{% active_link 'blog || post' %}" href="/blog">Blog</a></li>
+        <li><a class="{% active_link 'portfolio' %}" href="/portfolio">Portfolio</a></li>
+      </ul>
+    </div>
+  </nav>
+  {% block content %}{% endblock %}
+</body>
+</html>

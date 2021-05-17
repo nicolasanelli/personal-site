@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}John Doe - Blog{% endblock %}
+
+{% block content %}
+<main class="content-container">
+  <aside>
+      <!-- <form action="">
+        <input type="text" placeholder="Procurar postagens...">
+        <input type="submit" name="" value="Buscar" id="">
+      </form> -->
+      <h3>Postagens mais recentes</h3>
+      <ul>
+        <li><a href="/post/por-que-usar-docker-com-vscode">Por que usar docker com VSCode</a></li>
+        <li><a href="/post/html-css-js-php-a-stack-da-web">HTML, CSS, JS, PHP - A Stack da web</a></li>
+        <li><a href="/post/mean-vs-mern">MEAN vs MERN</a></li>
+        <li><a href="/post/o-padrao-solid">O Padrão SOLID</a></li>
+        <li><a href="/post/ddd-tdd-bdd-na-pratica">DDD, TDD e BDD na prática</a></li>
+        <li><a href="/post/electron-da-web-para-o-desktop">Electron, da web para o desktop</a></li>
+      </ul>
+  </aside>
+  <section>
+    {% block section %}{% endblock %}
+  </section>
+</main>
+{% endblock %}
