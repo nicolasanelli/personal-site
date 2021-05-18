@@ -38,7 +38,7 @@ class Post(models.Model):
   title = models.CharField(max_length=255, help_text="Título da postagem")
   slug = models.CharField(max_length=255, help_text="Slug")
   data_publicacao = models.DateField(blank=True, null=True)
-  plain_text = models.TextField(help_text="Conteúdo em texto")
+  plain_text = models.TextField(help_text="Conteúdo em texto", editable=False)
   markdown_text = models.TextField(help_text="Conteúdo em markdown")
   
   show = models.BooleanField(default=True)
