@@ -1,9 +1,14 @@
 from django.shortcuts import render
+from .models import *
 
-# Create your views here.
-
-def index(request):
-    return render(request, "index.html")
+def index(request):  
+  homepage = Homepage.objects.first()
+  links = HomepageLink.objects.filter(show=True).order_by('order').all()
+  context = {
+    'homepage': homepage,
+    'links': links
+  }
+  return render(request, "index.html", context=context)
 
 def blog(request):
     return render(request, "blog_list.html")

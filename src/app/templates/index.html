@@ -5,41 +5,60 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>John Doe</title>
+  <title>{{ homepage.name }}</title>
   <link rel="icon" type="image/png" href="{% static 'images/avatar.png' %}" />
   <script src="https://kit.fontawesome.com/51a374e229.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{% static 'css/index.css' %}">
 </head>
 <body>
   <main>
-    <div class="background"></div>
+    <div class="background"
+      {% if homepage.background_image %} style='background: url("{{ homepage.background_image.url }}")' {% endif %}
+    ></div>
     <section class="card">
-        <div class="card-header"></div>
-        <div class="card-profile">
-          <img src="{% static 'images/avatar.png' %}" alt="Face">
-        </div>
+      <div class="card-header" 
+        {% if homepage.cover_image %} style='background: url("{{ homepage.cover_image.url }}")' {% endif %}
+      ></div>
+      <div class="card-profile">
+        <img 
+        {% if homepage.profile_image %} 
+        src="{{ homepage.profile_image.url }}"
+        {% else %}
+        src="{% static 'images/default.png' %}"
+        {% endif %}
+        alt="{{ homepage.name }}">
+      </div>
+      {% if homepage == null %}
+      <div class="card-content">
+        <h2>Seja bem vindo!</h2>
+        <p>
+          Configure sua homepage no painel administrativo
+        </p>
+      </div>
+      {% else %}
         <div class="card-content">
-          <h1>John Doe</h1>
-          <h3>Developer | Games | Writter</h3>
+          <h1>{{ homepage.name }}</h1>
+          <h3>{{ homepage.subtitle }}</h3>
           <div class="card-content-links">
-            <a href="/blog">Blog</a>
-            <a href="/portfolio">Portfolio</a>
+            {% if homepage.blog_button %}
+              <a href="/blog">Blog</a>
+            {% endif %}
+            {% if homepage.portfolio_button %}
+              <a href="/portfolio">Portfolio</a>
+            {% endif %}
           </div>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, facilis. Officiis, vero et est recusandae consequatur dolores velit? Sed repellat, repellendus ut rem velit voluptates iusto perspiciatis sit accusantium quasi.</p>
+          <p>{{ homepage.summary }}</p>
         </div>
         <div class="card-links">
-            <ul class="links">
-                <li>
-                  <a href="#" class="fa fa-linkedin"></a>
-                </li>
-                <li>
-                  <a href="#" class="fa fa-github"></a>
-                </li>
-                <li>
-                  <a href="#" class="fa fa-facebook"></a>
-                </li>
-            </ul>
+          <ul class="links">
+            {% for link in links %}
+              <li>
+                <a href="{{ link.url }}" class="fa {{ link.icon }}"></a>
+              </li>
+            {% endfor %}
+          </ul>
         </div>
+      {% endif %}
     </section>
   </main>
 </body>

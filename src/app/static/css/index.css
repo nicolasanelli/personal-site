@@ -68,7 +68,7 @@ main::before {
   top: 0;
   left: 0;
   z-index: 0;
-  background: url("../images/bg.jpg");
+  /* background: url("../images/bg.jpg"); */
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-position: top !important;
@@ -108,7 +108,7 @@ main::before {
 .card-header {
   height: 170px;
   width: 100%;
-  background: url("../images/cover.jpg");
+  /* background: url("../images/cover.jpg"); */
   background-color: var(--overlay-color-2);
   background-repeat: no-repeat !important;
   background-size: cover !important;

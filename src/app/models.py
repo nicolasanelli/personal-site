@@ -7,9 +7,9 @@ class Homepage(models.Model):
   subtitle = models.CharField(max_length=255, help_text="Subtitulo exibido abaixo do nome", blank=True, null=True)
   summary = models.TextField(help_text="Resumo", blank=True, null=True)
   
-  background_image = models.ImageField(upload_to="background", help_text="Imagem do fundo da pagina", null=True, blank=True) 
-  cover_image = models.ImageField(upload_to="cover", help_text="Imagem do card", null=True, blank=True) 
-  profile_image = models.ImageField(upload_to="profile", help_text="Imagem de perfil", null=True, blank=True) 
+  background_image = models.ImageField(upload_to="background", help_text="Imagem do fundo da pagina (1920x1080 ou 16:9)", null=True, blank=True) 
+  cover_image = models.ImageField(upload_to="cover", help_text="Imagem do card (560x170)", null=True, blank=True) 
+  profile_image = models.ImageField(upload_to="profile", help_text="Imagem de perfil (170x170 ou 1:1)", null=True, blank=True) 
 
   blog_button = models.BooleanField(default=True)
   portfolio_button = models.BooleanField(default=True)
@@ -49,7 +49,7 @@ class Post(models.Model):
 class Project(models.Model):
   name = models.CharField(max_length=255, help_text="Nome do projeto")
   description = models.TextField(max_length=2000, help_text="Descrição do projeto")
-  image = models.ImageField(upload_to="projects", help_text="Imagem do projeto", null=True, blank=True) 
+  image = models.ImageField(upload_to="projects", help_text="Imagem do projeto (225x225 ou 1:1)", null=True, blank=True) 
   technologies = models.CharField(max_length=255, help_text="Tecnologias utilizadas", blank=True, null=True)
   
   show = models.BooleanField(default=True)
