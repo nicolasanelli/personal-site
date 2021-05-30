@@ -9,6 +9,7 @@
   <title>{% block title %}{% endblock %}</title>
   <link rel="icon" type="image/png" href="{% static 'images/default.png' %}" />
   <link rel="stylesheet" href="{% static 'css/site.css' %}">
+  <link rel="stylesheet" href="{% static 'css/table.css' %}">
   <script src="{% static 'js/site.js' %}"></script>
   <script src="https://kit.fontawesome.com/51a374e229.js" crossorigin="anonymous"></script>
 </head>
@@ -30,5 +31,6 @@
     </div>
   </nav>
   {% block content %}{% endblock %}
+
 </body>
 </html>

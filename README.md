@@ -12,6 +12,7 @@ O que eu preciso instalar pra rodar esse app?
 sudo apt-get install python3
   $ pip3 install django
   $ pip3 install django-active-link
+  $ pip3 install django-summernote
   $ pip3 install pillow
 ```
 
