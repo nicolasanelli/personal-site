@@ -1,56 +1,37 @@
 {% extends "base_blog.html" %}
 
-{% block section %}<article id="por-que-usar-docker-com-vscode" class="post">
-  <small class="publish-info">09 Mar, 21</small>
-  <h2 >Por que usar docker com VSCode</h2>
-  <div class="post-content">
-    <p>Although moreover mistaken kindness me feelings do be marianne. Son over own nay with tell they cold upon are. Cordial village and settled she ability law herself. Finished why bringing but sir bachelor unpacked any thoughts. Unpleasing unsatiable particular inquietude did nor sir. Get his declared appetite distance his together now families. Friends am himself at on norland it viewing. Suspected elsewhere you belonging continued commanded she.</p> 
-    <p>Received the likewise law graceful his. Nor might set along charm now equal green. Pleased yet equally correct colonel not one. Say anxious carried compact conduct sex general nay certain. Mrs for recommend exquisite household eagerness preserved now. My improved honoured he am ecstatic quitting greatest formerly.</p>
-    <p>View fine me gone this name an rank. Compact greater and demands mrs the parlors. Park be fine easy am size away. Him and fine bred knew. At of hardly sister favour. As society explain country raising weather of. Sentiments nor everything off out uncommonly partiality bed.</p>
-  </div>
-  <div class="post-actions">
-    <button>
-      Compartilhar <i class="fas fa-share-alt"></i> 
-    </button>
-    <button>
-      Copiar Link <i class="fas fa-link"></i> 
-    </button>
-  </div>
-</article>
+{% block section %}
+  {% for post in post_list %}
+    <article id="{{ post.slug }}" class="post">
+      <small class="publish-info">{{ post.data_publicacao | date:'d b, y' }} </small>
+      <h2><a href="{% url 'post' post.slug %}">{{ post.title }}</a></h2>
+      <div class="post-content">
+        {{ post.markdown_text }}
+      </div>
+      <div class="post-actions">
+        <button>
+          Compartilhar <i class="fas fa-share-alt"></i> 
+        </button>
+        <button>
+          Copiar Link <i class="fas fa-link"></i> 
+        </button>
+      </div>
+    </article>
+  {% endfor %}
 
-<article id="html-css-js-php-a-stack-da-web" class="post">
-  <small class="publish-info">04 Mar, 21</small>
-  <h2>HTML, CSS, JS, PHP - A Stack da web</h2>
-  <div class="post-content">
-    <p>Debating me breeding be answered an he. Spoil event was words her off cause any. Tears woman which no is world miles woody. Wished be do mutual except in effect answer. Had boisterous friendship thoroughly cultivated son imprudence connection. Windows because concern sex its. Law allow saved views hills day ten. Examine waiting his evening day passage proceed.</p> 
-    <p>Oh to talking improve produce in limited offices fifteen an. Wicket branch to answer do we. Place are decay men hours tiled. If or of ye throwing friendly required. Marianne interest in exertion as. Offering my branched confined oh dashwood.</p>
-    <p>Was justice improve age article between. No projection as up preference reasonably delightful celebrated. Preserved and abilities assurance tolerably breakfast use saw. And painted letters forming far village elderly compact. Her rest west each spot his and you knew. Estate gay wooded depart six far her. Of we be have it lose gate bred. Do separate removing or expenses in. Had covered but evident chapter matters anxious.</p>
-  </div>
-  <div class="post-actions">
-    <button>
-      Compartilhar <i class="fas fa-share-alt"></i> 
-    </button>
-    <button>
-      Copiar Link <i class="fas fa-link"></i> 
-    </button>
-  </div>
-</article>
-
-<article id="mean-vs-mern" class="post">
-  <small class="publish-info">01 Mar, 21</small>
-  <h2>MEAN vs MERN</h2>
-  <div class="post-content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed dignissim nisl. Nullam consectetur varius tempor. Curabitur euismod elementum ipsum sit amet suscipit. Phasellus ac aliquet ante. Etiam purus nulla, rhoncus ac diam eget, auctor condimentum elit. Nam ac nunc mattis, elementum lorem eu, volutpat quam. Sed at leo turpis. Nunc ultrices leo sit amet ultrices vehicula. Vestibulum enim est, suscipit nec justo at, placerat dictum tortor. Praesent dictum eros nunc, condimentum efficitur diam varius vel. Duis imperdiet orci ac purus blandit volutpat eget eu leo.</p>
-    <p>Donec ut diam in massa elementum luctus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec cursus orci eget neque varius tempor. Phasellus massa lectus, egestas in finibus vitae, porttitor nec orci. Donec imperdiet tellus sapien, vitae vestibulum ligula dictum sed. Mauris bibendum odio at erat bibendum rhoncus. Etiam ultrices justo non orci bibendum, non feugiat leo placerat. Nam maximus velit quis odio sollicitudin ultrices. Proin interdum euismod consectetur. Donec non iaculis est. Donec quis blandit turpis. Sed sed nisl sit amet justo pellentesque feugiat a sit amet libero. Donec ultrices ipsum malesuada, viverra turpis eu, rutrum est.</p>
-    <p>Phasellus ut iaculis orci, nec ultrices ex. Cras dignissim hendrerit nunc sed pretium. Nulla facilisi. Sed ipsum nisi, imperdiet ut auctor malesuada, sagittis eget erat. Aenean pulvinar purus vitae turpis consequat dictum. Phasellus ac ante ac nisl lobortis efficitur ut quis ex. Vivamus ac nibh turpis. Morbi suscipit vulputate turpis, nec fringilla sem cursus sed. Integer vel hendrerit ligula. In sit amet diam sem. Mauris ligula quam, lacinia vitae vulputate ac, porttitor vitae quam. Aliquam tempus bibendum nulla et ullamcorper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed posuere arcu eget augue mollis commodo. Morbi nec laoreet urna, eu cursus purus. Sed tempus diam vitae elementum vehicula.</p>
-  </div>
-  <div class="post-actions">
-    <button>
-      Compartilhar <i class="fas fa-share-alt"></i> 
-    </button>
-    <button>
-      Copiar Link <i class="fas fa-link"></i> 
-    </button>
-  </div>
-</article>
+  <!-- Pagination  -->
+  <nav>
+    <ul class="pagination">
+      {% if page_obj.has_previous %}
+        <li class="page-previous">
+          <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">Anterior</a>
+        </li>
+      {% endif %}
+      {% if page_obj.has_next %}
+        <li class="page-next">
+          <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">Próximo</a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
 {% endblock %}

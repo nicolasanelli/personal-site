@@ -1,13 +1,11 @@
 {% extends "base_blog.html" %}
 
 {% block section %}
-  <article id="mean-vs-mern" class="post">
-    <small class="publish-info">01 Mar, 21</small>
-    <h2>MEAN vs MERN</h2>
+  <article id="{{ post.slug }}" class="post">
+    <small class="publish-info">{{ post.data_publicacao | date:'d b, y' }} </small>
+    <h2><a href="{% url 'post' post.slug %}">{{ post.title }}</a></h2>
     <div class="post-content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed dignissim nisl. Nullam consectetur varius tempor. Curabitur euismod elementum ipsum sit amet suscipit. Phasellus ac aliquet ante. Etiam purus nulla, rhoncus ac diam eget, auctor condimentum elit. Nam ac nunc mattis, elementum lorem eu, volutpat quam. Sed at leo turpis. Nunc ultrices leo sit amet ultrices vehicula. Vestibulum enim est, suscipit nec justo at, placerat dictum tortor. Praesent dictum eros nunc, condimentum efficitur diam varius vel. Duis imperdiet orci ac purus blandit volutpat eget eu leo.</p>
-      <p>Donec ut diam in massa elementum luctus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec cursus orci eget neque varius tempor. Phasellus massa lectus, egestas in finibus vitae, porttitor nec orci. Donec imperdiet tellus sapien, vitae vestibulum ligula dictum sed. Mauris bibendum odio at erat bibendum rhoncus. Etiam ultrices justo non orci bibendum, non feugiat leo placerat. Nam maximus velit quis odio sollicitudin ultrices. Proin interdum euismod consectetur. Donec non iaculis est. Donec quis blandit turpis. Sed sed nisl sit amet justo pellentesque feugiat a sit amet libero. Donec ultrices ipsum malesuada, viverra turpis eu, rutrum est.</p>
-      <p>Phasellus ut iaculis orci, nec ultrices ex. Cras dignissim hendrerit nunc sed pretium. Nulla facilisi. Sed ipsum nisi, imperdiet ut auctor malesuada, sagittis eget erat. Aenean pulvinar purus vitae turpis consequat dictum. Phasellus ac ante ac nisl lobortis efficitur ut quis ex. Vivamus ac nibh turpis. Morbi suscipit vulputate turpis, nec fringilla sem cursus sed. Integer vel hendrerit ligula. In sit amet diam sem. Mauris ligula quam, lacinia vitae vulputate ac, porttitor vitae quam. Aliquam tempus bibendum nulla et ullamcorper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed posuere arcu eget augue mollis commodo. Morbi nec laoreet urna, eu cursus purus. Sed tempus diam vitae elementum vehicula.</p>
+      {{ post.markdown_text }}
     </div>
     <div class="post-actions">
       <button>

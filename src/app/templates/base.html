@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}John Doe{% endblock %}</title>
+  <title>{% block title %}{% endblock %}</title>
   <link rel="icon" type="image/png" href="{% static 'images/avatar.png' %}" />
   <link rel="stylesheet" href="{% static 'css/site.css' %}">
   <script src="{% static 'js/site.js' %}"></script>
@@ -17,12 +17,16 @@
   <nav>
     <div class="nav">
       <header class="blog-title" >
-        <a href="/blog">John Doe</a>
+        <a>{% block name %}{% endblock %}</a>
       </header>
       <ul class="nav-links">
-        <li><a href="/">About me</a></li>
-        <li><a class="{% active_link 'blog || post' %}" href="/blog">Blog</a></li>
-        <li><a class="{% active_link 'portfolio' %}" href="/portfolio">Portfolio</a></li>
+        <li><a href="{% url 'index' %}">About me</a></li>
+        {% if homepage.blog_button %}
+          <li><a class="{% active_link 'blog' %}" href="{% url 'blog' %}">Blog</a></li>
+        {% endif %}
+        {% if homepage.portfolio_button %}
+          <li><a class="{% active_link 'portfolio' %}" href="{% url 'portfolio' %}">Portfolio</a></li>
+        {% endif %}
       </ul>
     </div>
   </nav>

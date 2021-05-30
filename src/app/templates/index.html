@@ -41,10 +41,10 @@
           <h3>{{ homepage.subtitle }}</h3>
           <div class="card-content-links">
             {% if homepage.blog_button %}
-              <a href="/blog">Blog</a>
+              <a href="{% url 'blog' %}">Blog</a>
             {% endif %}
             {% if homepage.portfolio_button %}
-              <a href="/portfolio">Portfolio</a>
+            <a href="{% url 'portfolio' %}">Portfolio</a>
             {% endif %}
           </div>
           <p>{{ homepage.summary }}</p>
