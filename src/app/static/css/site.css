@@ -264,7 +264,7 @@ aside a:hover {
   display: inline-flex;
 }
 
-.project .project-footer button {
+.project .project-footer .project-link {
   border-radius: 1em;
   padding: 5px 25px 5px 25px;
   background-color: var(--secondary-color);
@@ -279,7 +279,7 @@ aside a:hover {
   letter-spacing: 1px;
 }
 
-.project .project-footer button:hover {
+.project .project-footer .project-link:hover {
   cursor: pointer;
   background-color: var(--secondary-text);
   color: var(--secondary-color);

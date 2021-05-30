@@ -1,84 +1,33 @@
 {% extends "base.html" %}
-{% load static %}
 
-{% block title %}Portfolio{% endblock %}
-{% block name %}Portfolio{% endblock %}
+{% block title %}{{ homepage.name }} - Portfolio{% endblock %}
+{% block name %}{{ homepage.name }}'s Portfolio{% endblock %}
 
 {% block content %}
-<main class="content-container portfolio">
-  <article class="project">
-    <div class="project-content">
-      <div>
-        <h2 class="project-title">Chess Game</h2>
-        <div class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis pharetra leo, et tempus metus. Ut id augue id leo dignissim porttitor sed non massa. Nulla bibendum suscipit neque lacinia fringilla. Sed et sapien hendrerit, aliquam erat nec, pulvinar orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
-      </div>
-      <img src="{% static 'images/chessgame.png' %}" alt="">
-    </div>
-    <div class="project-footer">
-      <div>C++, Lua, Python</div>
-      <ul>
-        <li>
-          <button>
-            Github
-            <i class="fab fa-github"></i>
-          </button>
-        </li>
-        <li>
-          <button>
-            Demo
-            <i class="fas fa-external-link-alt"></i>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="project">
-    <div class="project-content">
-      <div>
-        <h2 class="project-title">Loja Virtual</h2>
-        <div class="project-description">Mauris dictum fermentum dolor, sit amet aliquet turpis eleifend in. In rhoncus magna quis risus malesuada, id maximus odio iaculis. Pellentesque a magna malesuada, fermentum mi non, lobortis turpis. Curabitur ac tellus sed risus suscipit tempus. Morbi aliquet venenatis neque, at elementum diam.</div>
-      </div>
-      <img src="{% static 'images/loja-virtual.jpeg' %}" alt="">
-    </div>
-    <div class="project-footer">
-      <div>PHP, HTML, CSS, JQuery</div>
-      <ul>
-        <li>
-          <button>
-            Check out
-            <i class="fas fa-desktop"></i>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="project">
-    <div class="project-content">
-      <div>
-        <h2 class="project-title">CMS</h2>
-        <div class="project-description">Nullam nisl libero, dapibus sit amet sapien ac, sagittis convallis quam. Etiam ultricies erat velit, ut ultrices turpis mollis ac. Morbi congue sollicitudin leo, a feugiat nunc malesuada ut. Aliquam sed auctor enim, ac congue odio. Vivamus sit amet nibh sit amet lectus tincidunt aliquam.</div>
-      </div>
-      <img src="{% static 'images/cms.png' %}" alt="">
-    </div>
-    <div class="project-footer">
-      <div>Node, React.js</div>
-      <ul>
-        <li>
-          <button>
-            Patreon
-            <i class="fab fa-patreon"></i>
-          </button>
-        </li>
-        <li>
-          <button>
-            Check out
-            <i class="fas fa-desktop"></i>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </article>
-</main>
+  <main class="content-container portfolio">
+    {% for project in project_list %}
+      <article class="project">
+        <div class="project-content">
+          <div>
+            <h2 class="project-title">{{ project.name }}</h2>
+            <div class="project-description">{{ project.description }}</div>
+          </div>
+          <img src="{{ project.image.url }}" alt="">
+        </div>
+        <div class="project-footer">
+          <div>{{ project.technologies }}</div>
+          <ul>
+            {% for link in project.projectlink_set.all %}
+            <li>
+              <a class="project-link" href="{{ link.url }}" target="_blank"> 
+                {{ link.name }}
+                <i class="{{ link.icon }}"></i>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </article>
+    {% endfor %}
+  </main>
 {% endblock %}

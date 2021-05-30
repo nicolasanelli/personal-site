@@ -33,5 +33,14 @@ class PostView(generic.DetailView):
     'recent_posts': Post.objects.all()[:10]
   }
 
-def portfolio(request):
-    return render(request, "portfolio.html")
+class PortfolioView(generic.ListView):
+  model = Project
+  template_name = "portfolio.html"
+
+  extra_context={
+    'homepage': Homepage.objects.first(),
+    'recent_posts': Post.objects.all()[:10]
+  }
+
+  def get_queryset(self):
+    return self.model.objects.filter(show=True)
