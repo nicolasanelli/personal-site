@@ -1,0 +1,16 @@
+<!-- Post -->
+<article id="{{ post.slug }}" class="post">
+  <small class="publish-info">{{ post.data_publicacao | date:'d b, y' }} </small>
+  <h2><a href="{% url 'post' post.slug %}">{{ post.title }}</a></h2>
+  <div class="post-content">
+    {{ post.markdown_text }}
+  </div>
+  <!-- <div class="post-actions">
+    <button>
+      Compartilhar <i class="fas fa-share-alt"></i> 
+    </button>
+    <button>
+      Copiar Link <i class="fas fa-link"></i> 
+    </button>
+  </div> -->
+</article>
