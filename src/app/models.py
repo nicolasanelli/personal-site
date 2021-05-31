@@ -1,4 +1,11 @@
 from django.db import models
+from django.utils.text import slugify
+import re 
+
+def cleanhtml(raw_html):
+  cleanr = re.compile('<.*?>')
+  cleantext = re.sub(cleanr, '', raw_html)
+  return cleantext
 
 # Create your models here.
 class Homepage(models.Model):
@@ -36,12 +43,17 @@ class Post(models.Model):
     ordering = ['-data_publicacao']
 
   title = models.CharField(max_length=255, help_text="Título da postagem")
-  slug = models.CharField(max_length=255, help_text="Slug")
+  slug = models.CharField(max_length=255, help_text="Slug", editable=False)
   data_publicacao = models.DateField(blank=True, null=True)
   plain_text = models.TextField(help_text="Conteúdo em texto", editable=False)
   markdown_text = models.TextField(help_text="Conteúdo em markdown")
   
   show = models.BooleanField(default=True)
+
+  def save(self, *args, **kwargs):
+      self.slug = slugify(self.title)
+      self.plain_text = cleanhtml(self.markdown_text)
+      super(Post, self).save(*args, **kwargs)
 
   def __str__(self):
     return f"[{self.data_publicacao}] - {self.title}"
