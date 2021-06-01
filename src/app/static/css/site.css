@@ -152,7 +152,7 @@ aside a:hover {
   font-weight: 700;
 }
 
-.post h2 {
+.post .post-title {
   margin-top: 12px;
   font-size: 36px;
   color: var(--assent-text);
@@ -173,6 +173,9 @@ aside a:hover {
   line-height: 1.7em;
   font-family: var(--post-font-family);
   text-align: justify;
+}
+.post .post-content h1 {
+  font-size: 2em;
 }
 
 .post .post-actions {

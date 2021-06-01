@@ -12,7 +12,9 @@
             <h2 class="project-title">{{ project.name }}</h2>
             <div class="project-description">{{ project.description }}</div>
           </div>
+          {%if project.image %}
           <img src="{{ project.image.url }}" alt="">
+          {% endif %}
         </div>
         <div class="project-footer">
           <div>{{ project.technologies }}</div>
