@@ -27,6 +27,14 @@ Acessar: [localhost:8000/admin](http://localhost:8000/admin)
 
 Usuário: admin/admin
 
+### Utilizando docker
+
+Esse projeto tem a configuração de um docker-compose com um serviço `app` contendo todas as dependências e executando o modo de desenvolvimento.
+```
+  $ docker-compose up -d --build
+```
+
+**Obs:** pode ser necessário criar o banco de dados antes.
 
 ## Ambiente de exemplo
 
