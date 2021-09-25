@@ -23,7 +23,9 @@ Comandos para configurar um novo ambiente de desenvolviemtno:
   $ python3 manage.py createsuperuser  # admin, admin@email.com, admin, admin, y
   $ python3 manage.py runserver
 ```
-Acessar: [localhost:8000/admin](http://localhost:8000/admin)
+Acessar: [localhost:8000/admin](http://localhost:8000/admin) 
+
+Usuário: admin/admin
 
 
 ## Ambiente de exemplo
