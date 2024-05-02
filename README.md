@@ -51,7 +51,7 @@ Dessa forma você terá a ficará com a seguinte estrutura:
   - app
   - media <<<
   - mysite
-  - db.sqlite3
-  - manage.py <<<
+  - db.sqlite3 <<<
+  - manage.py
 
 Por fim basta iniciar o servidor como mostrado no ambiente de desenvolvimento.
